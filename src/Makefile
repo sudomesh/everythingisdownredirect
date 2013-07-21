@@ -3,7 +3,7 @@
 all: internetisdownredirect
 
 internetisdownredirect: main.c
-	gcc -o internetisdownredirect main.c
+	$(CC) $(LDFLAGS) -o $@ $^
 
 clean:
-	rm internetisdownredirect
+	rm internetisdownredirect *.o
