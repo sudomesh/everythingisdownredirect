@@ -69,7 +69,6 @@ int read_and_respond(int fd) {
       return -1;
     }
 
-    //    close(fd);
   } else {
     debug("unknown query\n");
     return -1;
@@ -183,10 +182,9 @@ int run(port) {
         }
 
       } else { // data on connected socket
-        if(read_and_respond(i) < 0) {
-          close(i);
-          FD_CLR(i, &fds);
-        }
+        read_and_respond(i);
+        close(i);
+        FD_CLR(i, &fds);
       }
     }
     
