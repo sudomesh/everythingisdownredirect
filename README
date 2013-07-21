@@ -1,4 +1,13 @@
 
 An OpenWRT package to issue HTTP 303 redirects and reverse-proxy HTTP connections for whitelisted URLs.
 
-Code is on its way.
+It simply replies to all requests beginning with GET or POST with a 303 redirect to the specified URL.
+
+Usage:
+
+./internetisdownredirect: <port> <redirect_url> [debug]
+    <port> is the port where the ./internetisdownredirect listens (required).
+    <redirect_url> is the url to which http GET and POST
+     requests are redirected (required).
+    If debug is specified as the third argument,
+     debug output will be enabled (optional).
