@@ -2,8 +2,11 @@
 
 all: internetisdownredirect
 
-internetisdownredirect: main.c
+internetisdownredirect: main.o
 	$(CC) $(LDFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -c -I. -o $@ $<
 
 clean:
 	rm internetisdownredirect *.o
