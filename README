@@ -1,15 +1,23 @@
 
-An OpenWRT package to issue HTTP 303 redirects to all requests. It uses no libraries and has no dependencies.
+An OpenWRT package to issue HTTP 302 redirects to all GET requests. It uses no libraries and has no dependencies.
 
-Currently, it simply replies to all requests beginning with GET or POST with a 303 redirect to the specified URL.
+This is part of a minimal captive portal for the east bay mesh network. 
+The idea is that the captive portal will issue redirects to mesh-hosted servers when the internet is down.
+When the mesh connectivity is down as well, it will display a node-hosted web page.
 
-In the future it will also reverse-proxy requests to the specified URL to a specified server.
+If the internet is up, the captive portal will only block the exact traffic that causes modern operating systems to detect the (almost non-existant) captive portal, making the operating system show a "welcome to the mesh" page.
+
+These features are not yet completed.
 
 Usage:
 
-./internetisdownredirect: <port> <redirect_url> [debug]
-    <port> is the port where the ./internetisdownredirect listens (required).
+internetisdownredirect: <ip> <port> <redirect_url> [debug]
+    <ip> is the IP where internetisdownredirect binds and listens. 
+      Put ALL to bind to all IPs. 
+    <port> is the port where the internetisdownredirect listens (required).
     <redirect_url> is the url to which http GET and POST
      requests are redirected (required).
     If debug is specified as the third argument,
      debug output will be enabled (optional).
+
+

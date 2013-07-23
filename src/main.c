@@ -28,7 +28,8 @@ void version() {
 
 void usage(char* cmd_name) {
   fprintf(stderr, "%s: <ip> <port> <redirect_url> [debug]\n", cmd_name);
-  fprintf(stderr, "    <ip> is the IP where %s binds and listens. Put ALL to bind to all IPs. \n", cmd_name);
+  fprintf(stderr, "    <ip> is the IP where %s binds and listens. \n", cmd_name);
+  fprintf(stderr, "      Put ALL to bind to all IPs. \n");
   fprintf(stderr, "    <port> is the port where the %s listens (required).\n", cmd_name);
   fprintf(stderr, "    <redirect_url> is the url to which http GET and POST\n");
   fprintf(stderr, "     requests are redirected (required).\n");
