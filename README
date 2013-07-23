@@ -1,7 +1,9 @@
 
-An OpenWRT package to issue HTTP 303 redirects and reverse-proxy HTTP connections for whitelisted URLs.
+An OpenWRT package to issue HTTP 303 redirects to all requests. It uses no libraries and has no dependencies.
 
-It simply replies to all requests beginning with GET or POST with a 303 redirect to the specified URL.
+Currently, it simply replies to all requests beginning with GET or POST with a 303 redirect to the specified URL.
+
+In the future it will also reverse-proxy requests to the specified URL to a specified server.
 
 Usage:
 

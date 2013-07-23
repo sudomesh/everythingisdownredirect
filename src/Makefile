@@ -2,7 +2,7 @@
 
 all: internetisdownredirect
 
-internetisdownredirect: main.o
+internetisdownredirect: main.o api.o ip_acl.o protocol.o version.o
 	$(CC) $(LDFLAGS) -o $@ $^
 
 %.o: %.c
